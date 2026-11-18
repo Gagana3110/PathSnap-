@@ -57,8 +57,8 @@
     "label_reliable_m": 50.0
   },
   "hmm": {
-    "beta": 5.0,
-    "w_emission": 1.0,
+    "beta": 10.0,
+    "w_emission": 2.0,
     "max_route_m": 1500.0,
     "no_path_logp": -30.0,
     "gap_s": 10.0,
