@@ -1,0 +1,68 @@
+{
+  "model": "lightgbm",
+  "best_params": {
+    "n_estimators": 483,
+    "learning_rate": 0.01875220945578641,
+    "num_leaves": 248,
+    "min_child_samples": 156,
+    "subsample": 0.9697494707820946,
+    "colsample_bytree": 0.9368964102565893,
+    "reg_lambda": 0.24637685958997463,
+    "reg_alpha": 4.869640941520899
+  },
+  "search_space": {
+    "n_estimators": "int 100..800",
+    "learning_rate": "log-uniform 0.01..0.3",
+    "num_leaves": "int 15..255",
+    "min_child_samples": "int 5..200",
+    "subsample": "uniform 0.5..1.0",
+    "colsample_bytree": "uniform 0.4..1.0",
+    "reg_lambda": "log-uniform 1e-3..10",
+    "reg_alpha": "log-uniform 1e-3..10"
+  },
+  "n_trials": 10,
+  "objective": "mean GroupKFold CV observation-level Top-1 accuracy",
+  "features": [
+    "dist",
+    "dist_rank",
+    "dist_minus_min",
+    "dist_ratio",
+    "n_cand",
+    "proj_frac",
+    "beyond_end_m",
+    "arc_len",
+    "heading_diff",
+    "heading_diff_prev",
+    "speed",
+    "low_speed",
+    "dist_prev1",
+    "dist_next1",
+    "dist_prev3",
+    "dist_next3",
+    "dist_win_mean",
+    "dt_prev",
+    "dt_next",
+    "deg_in_u",
+    "deg_out_v",
+    "has_reverse"
+  ],
+  "feature_cfg": {
+    "radius_m": 40.0,
+    "max_candidates": 12,
+    "fallback_k": 3,
+    "densify_step_m": 10.0,
+    "label_window": 10,
+    "label_step_pen_m": 2.0,
+    "label_jump_m": 50.0,
+    "label_reliable_m": 50.0
+  },
+  "hmm": {
+    "beta": 5.0,
+    "w_emission": 1.0,
+    "max_route_m": 1500.0,
+    "no_path_logp": -30.0,
+    "gap_s": 10.0,
+    "gap_m": 500.0,
+    "p_floor": 0.0001
+  }
+}

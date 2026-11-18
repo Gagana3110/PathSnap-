@@ -11,3 +11,5 @@ __pycache__/
 venv/
 .ipynb_checkpoints/
 .env
+
+results/models/rf.joblib
