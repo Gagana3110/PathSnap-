@@ -1,0 +1,36 @@
+{
+  "cfg": {
+    "radius_m": 40.0,
+    "max_candidates": 12,
+    "fallback_k": 3,
+    "densify_step_m": 10.0,
+    "label_window": 10,
+    "label_step_pen_m": 2.0,
+    "label_jump_m": 50.0,
+    "label_reliable_m": 50.0
+  },
+  "features": [
+    "dist",
+    "dist_rank",
+    "dist_minus_min",
+    "dist_ratio",
+    "n_cand",
+    "proj_frac",
+    "beyond_end_m",
+    "arc_len",
+    "heading_diff",
+    "heading_diff_prev",
+    "speed",
+    "low_speed",
+    "dist_prev1",
+    "dist_next1",
+    "dist_prev3",
+    "dist_next3",
+    "dist_win_mean",
+    "dt_prev",
+    "dt_next",
+    "deg_in_u",
+    "deg_out_v",
+    "has_reverse"
+  ]
+}
