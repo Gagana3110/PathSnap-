@@ -1,5 +1,7 @@
 # raw dataset + large generated files (regenerate with the scripts)
 data/
+Student folder/
+docs_hackathon/
 results/features_*.parquet
 results/obs_*.parquet
 *.zip

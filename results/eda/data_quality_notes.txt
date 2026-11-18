@@ -1,0 +1,23 @@
+DATA QUALITY SUMMARY (auto-generated from inventory.csv)
+
+Trips: {'train': 80, 'student_test': 10}
+Raw cleaning counts (all splits):
+raw_raw_rows                227577
+raw_nan_rows                     0
+raw_invalid_coords               0
+raw_unsorted_steps               0
+raw_duplicate_timestamps         0
+
+Fraction of 1-second steps (train): 0.9650
+Trips with gaps > 30 s: 30
+Max gap: 153064 s
+Median GPS->route distance (train): 5.61 m, 95th pct: 140.21 m
+Trips whose route has breaks (consecutive arcs not connected): 11
+Median fraction of arcs that also exist reversed: 0.951
+Max local-projection error vs haversine: 0.7192 m
+
+DECISIONS:
+- drop NaN/invalid rows, sort by time, drop duplicate timestamps
+- use local metric projection (error shown above) for all distances
+- arcs are directed and most roads exist in both directions -> heading feature needed
+- route is a list of arcs, so per-point labels are derived by monotonic matching (features/)

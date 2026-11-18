@@ -46,7 +46,13 @@ if res:
                f"breaks: classifier {m.get('clf', {}).get('route_breaks')} vs HMM {m.get('hmm', {}).get('route_breaks')}")
 
     gps = res["gps"]
-    fm = folium.Map(location=gps[len(gps) // 2], zoom_start=14, tiles="OpenStreetMap")
+    fm = folium.Map(
+        location=gps[len(gps) // 2],
+        zoom_start=14,
+        tiles="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+        attr="Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ",
+        max_zoom=16,
+    )
     g1 = folium.FeatureGroup("Raw GPS")
     for p in gps[:: max(1, len(gps) // 1500)]:
         folium.CircleMarker(p, radius=2, color="#1f77b4", fill=True, weight=0, fill_opacity=.8).add_to(g1)
