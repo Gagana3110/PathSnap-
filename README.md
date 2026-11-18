@@ -1,13 +1,4 @@
 # PathSnap – Distributed Map-Matching & Route Reconstruction
-UE24CS352A Machine Learning Hackathon, PES University
-
-## Team
-| Name | SRN | Role |
-|---|---|---|
-| | | Data processing, EDA, Folium maps |
-| | | Candidate generation, features, labels |
-| | | Models, comparison, Bayesian optimisation |
-| | | HMM/Viterbi, FastAPI, UI |
 
 ## Repository structure
 | Folder | Contents |
