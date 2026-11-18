@@ -1,0 +1,11 @@
+# raw dataset + large generated files (regenerate with the scripts)
+data/
+results/features_*.parquet
+results/obs_*.parquet
+*.zip
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.env
