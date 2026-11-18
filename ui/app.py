@@ -1,6 +1,8 @@
 
 """PathSnap - Map Matching & Route Reconstruction Dashboard."""
 
+import os
+
 import requests
 import streamlit as st
 import folium
@@ -190,7 +192,7 @@ with st.sidebar:
 
     api = st.text_input(
         "Backend API URL",
-        value="http://127.0.0.1:8000",
+        value=os.environ.get("PATHSNAP_API", "http://10.8.120.116:8000"),
         help="Enter the backend laptop's IP address when connecting over Wi-Fi.",
     ).strip().rstrip("/")
 
@@ -387,7 +389,7 @@ if res:
         route_map = folium.Map(
             location=midpoint,
             zoom_start=14,
-            tiles="CartoDB positron",
+            tiles="OpenStreetMap",
             control_scale=True,
         )
 
